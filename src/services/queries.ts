@@ -20,7 +20,7 @@ export const useTodosList = (ids: (number | undefined)[] | undefined) => {
   return useQueries({
     queries: validIds.map((id) => {
       return {
-        queryKey: ['todosList', id],
+        queryKey: ['todo', { id }],
         queryFn: () => getTodo(id!)
       }
     })
